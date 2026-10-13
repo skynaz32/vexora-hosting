@@ -41,6 +41,32 @@ app.get("/api/panel", (req, res) => {
   });
 });
 
+app.get("/api/features", (req, res) => {
+  res.json({
+    customer: [
+      "bot-hosting",
+      "embed-builder",
+      "new-assets",
+      "news"
+    ],
+    staff: [
+      "grant-access",
+      "manage-servers",
+      "upload-assets",
+      "publish-news",
+      "manage-advertisements"
+    ],
+    admin: [
+      "manage-users",
+      "manage-staff",
+      "manage-plans",
+      "ban-users",
+      "system-settings"
+    ],
+    note: "Permissions must be enforced by authenticated backend routes."
+  });
+});
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`VEXORA HOSTING API listening on port ${PORT}`);
 });
