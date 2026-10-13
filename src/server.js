@@ -78,6 +78,30 @@ app.get("/api/hosting/status", (req, res) => {
   });
 });
 
+const hostingPlans = [
+  {
+    id: "free",
+    name: "Free",
+    priceMYR: 0,
+    ramMB: null,
+    requiresDiscordMembership: false
+  },
+  {
+    id: "paid",
+    name: "Paid",
+    priceMYR: null,
+    ramMB: null,
+    requiresDiscordMembership: true
+  }
+];
+
+app.get("/api/plans", (req, res) => {
+  res.json({
+    plans: hostingPlans,
+    note: "RAM limits and prices must be configured before launch."
+  });
+});
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`VEXORA HOSTING API listening on port ${PORT}`);
 });
