@@ -67,6 +67,17 @@ app.get("/api/features", (req, res) => {
   });
 });
 
+app.get("/api/hosting/status", (req, res) => {
+  res.json({
+    service: "VEXORA HOSTING",
+    hostingEngine: "not-connected",
+    totalServers: null,
+    runningServers: null,
+    ramUsage: null,
+    message: "Hosting engine integration is pending."
+  });
+});
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`VEXORA HOSTING API listening on port ${PORT}`);
 });
