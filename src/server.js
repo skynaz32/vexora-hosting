@@ -21,6 +21,26 @@ app.get("/api/health", (req, res) => {
   });
 });
 
+app.get("/api/panel", (req, res) => {
+  res.json({
+    name: "VEXORA HOSTING",
+    panels: [
+      "customer",
+      "staff",
+      "admin"
+    ],
+    features: [
+      "bot-hosting",
+      "embed-builder",
+      "access-management",
+      "new-assets",
+      "news",
+      "advertisements"
+    ],
+    status: "development"
+  });
+});
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`VEXORA HOSTING API listening on port ${PORT}`);
 });
